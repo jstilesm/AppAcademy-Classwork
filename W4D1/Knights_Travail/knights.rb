@@ -2,7 +2,7 @@ require_relative "Polynode"
 
 class KnightPathFinder
     
-    # CONSTANT = [[1,2],[2,1]]
+
     attr_reader :starting_position, :root_node
 
     def initialize(starting_position)
@@ -34,22 +34,32 @@ class KnightPathFinder
     end
 
     def self.valid_moves(pos)
+        # debugger
         arr = []
+        moveset = [[1,2],[-1,-2],[2,1],[-2,1],[-1,2],[2,-1],[-2,-1],[1,-2]]
+        row, col = pos
+        moveset.each do |move|
+            p = []
+            move.each_with_index do |c,i|
+                p << row + c if i == 0
+                p << col + c if i == 1
+                
+            end
+            arr << p
+        end
 
-        i = 1
-        j = 2
-        arr << [pos[0] + i, pos[1] + j] #right 1 up 2
-        arr << [pos[0] - i, pos[1] + j] #left 1 up 2 
-        arr << [pos[0] - j, pos[1] + i] #left 2 up 1
-        arr << [pos[0] - j, pos[1] - i] #left 2 down 1
-        arr << [pos[0] - i, pos[1] - j] #left 1 down 2 
-        arr << [pos[0] + i, pos[1] - j] #right 1 down 2
-        arr << [pos[0] + j, pos[1] + i] #right 2 up 1
-        arr << [pos[0] + j, pos[1] - i] #right 2 down 1
+        # i = 1
+        # j = 2
+        # arr << [pos[0] + i, pos[1] + j] #right 1 up 2
+        # arr << [pos[0] - i, pos[1] + j] #left 1 up 2 
+        # arr << [pos[0] - j, pos[1] + i] #left 2 up 1
+        # arr << [pos[0] - j, pos[1] - i] #left 2 down 1
+        # arr << [pos[0] - i, pos[1] - j] #left 1 down 2 
+        # arr << [pos[0] + i, pos[1] - j] #right 1 down 2
+        # arr << [pos[0] + j, pos[1] + i] #right 2 up 1
+        # arr << [pos[0] + j, pos[1] - i] #right 2 down 1
 
         #  storing all possibles in a stored array and iterating through
-
-
         on_board = []
         arr.select do |move|
             on_board << move if ((move[0] < 8) && (move[0] >= 0)) && ((move[1] < 8) && (move[1] >= 0))

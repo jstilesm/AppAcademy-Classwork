@@ -13,7 +13,7 @@ class KnightPathFinder
 
     require "byebug"
     def build_move_tree
-        #debugger
+        
         queue = [@root_node]
 
         while queue.length > 0

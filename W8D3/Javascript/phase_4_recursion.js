@@ -62,11 +62,11 @@ function deepDup(arr) {
 
 function bsearch(arr, target) {
   let half = Math.floor(arr.length / 2);
-  if ((arr.length === 1) && (arr[half] != target)) {
-  return -1;
+  if (arr.length === 0) {
+    return -1;
   }
   if (arr[half] === target) {
-      return half;
+    return half;
   } else if (arr[half] > target) {
   return bsearch(arr.slice(0,half),target);
   } else {

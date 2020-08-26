@@ -61,15 +61,24 @@ function deepDup(arr) {
 // [2, 3]
 
 function bsearch(arr, target) {
-   let half = arr.length / 2;
-   if ((arr.length === 1) && (arr[half] != target)) {
-    return -1;
-   }
-   if (arr[half] === target) {
-       return target;
-   } else if (arr[half] > target) {
-    return bsearch(arr.slice(0,half),target);
-   } else {
-    return bsearch(arr.slice(half),target);
+  let half = Math.floor(arr.length / 2);
+  if ((arr.length === 1) && (arr[half] != target)) {
+  return -1;
+  }
+  if (arr[half] === target) {
+      return half;
+  } else if (arr[half] > target) {
+  return bsearch(arr.slice(0,half),target);
+  } else {
+    let upperSearch = bsearch(arr.slice(half), target);
+    if (upperSearch === null) {
+      return -1;
+    } else {
+      return 1 + half + upperSearch;
+    }
    }
 }
+
+
+
+[1,2,3,4,4,5,7]

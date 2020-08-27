@@ -66,19 +66,19 @@ function bsearch(arr, target) {
     return -1;
   }
   if (arr[half] === target) {
-    return half;
+      return half;
   } else if (arr[half] > target) {
-  return bsearch(arr.slice(0,half),target);
+  return bsearch(arr.slice(0, half),target);
   } else {
-    let upperSearch = bsearch(arr.slice(half), target);
-    if (upperSearch === null) {
+    let upperSearch = bsearch(arr.slice(half + 1), target);
+    if (upperSearch === -1) {
       return -1;
     } else {
-      return 1 + half + upperSearch;
+      return 1 + half + upperSearch
     }
    }
-}
+};
 
 
-
+bsearch([1,2,3,4,4,5,7],6)
 [1,2,3,4,4,5,7]

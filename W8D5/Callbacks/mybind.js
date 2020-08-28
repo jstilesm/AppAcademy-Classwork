@@ -4,7 +4,6 @@ Function.prototype.myBind = function(context) {
     return function boundfunction() {
         return boundTarget.apply(context)
     } 
-
 }
 
 

@@ -87,23 +87,23 @@ notMarkovSays("meow", "me");
 
 
 function curriedSum(numArgs) {
-    numbers = [];
+    const numbers = [];
     function _curriedSum (number) {
         numbers.push(number)
         if (numbers.length === numArgs) {
-            sum = 0
+            let sum = 0
             for (i = 0; i < numbers.length; i++) {
                 sum += numbers[i]
             } 
             return sum;
         } else {
-            return _curriedSum()
+            return _curriedSum;
         }
     }
-    return _curriedSum();
+    return _curriedSum;
 
 }
 
 // test 
-const sum = curriedSum(4)
-sum(5)(30)(20)(1)
+const counting = curriedSum(4)
+counting(5)(30)(20)(1)

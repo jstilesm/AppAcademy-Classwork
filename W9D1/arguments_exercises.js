@@ -150,3 +150,6 @@ Function.prototype.curry2 = function(numArgs) {
 } 
 
 sumThree.curry2(3)(1)(4)(5);
+
+// why null, 
+// when we dont care about context, pass it null as first arg, has to be smthing

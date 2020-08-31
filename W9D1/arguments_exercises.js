@@ -85,6 +85,8 @@ notMarkovSays("meow", "me");
 // Pavlov says meow to me!
 // true
 
+// Currying is the process of decomposing a function that takes multiple arguments into one that takes single arguments successively until it has the sufficient number of arguments to run.
+
 
 function curriedSum(numArgs) {
     const numbers = [];
@@ -107,3 +109,44 @@ function curriedSum(numArgs) {
 // test 
 const counting = curriedSum(4)
 counting(5)(30)(20)(1)
+
+Function.prototype.curry = function(numArgs) {
+    const args = [];
+    const func = this // very similar to before, except pass a function to the arguments
+    // debugger
+    function _curriedFunc (arg) {
+        args.push(arg)
+     if (args.length === numArgs) {
+        // debugger
+        return func(...args)   // user the spread operator, why?
+    } else {
+        return _curriedFunc;
+        }
+    }
+    return _curriedFunc;
+}
+
+function sumThree(num1, num2, num3) {
+    return num1 + num2 + num3;
+}
+
+sumThree.curry(3)(1)(4)(5);
+
+
+// this one uses Function.prototype.apply 
+
+Function.prototype.curry2 = function(numArgs) {
+    const args = []
+    const func = this;
+    function _curriedFunc (arg) {
+        args.push(arg)
+        if (args.length === numArgs) {
+            return func.apply(null, args) // can use apply to take in an array
+        } else {
+            return _curriedFunc;
+        }
+    }
+    return _curriedFunc;
+} 
+
+sumThree.curry2(3)(1)(4)(5);

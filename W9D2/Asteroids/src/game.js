@@ -68,7 +68,7 @@ Game.prototype.remove = function remove(object){
     if (object instanceof Asteroid){
         this.everyObject.splice(this.everyObject.indexOf(object), 1);
     }else if(object instanceof Ship){
-        console.log(object)
+        console.log(object);
         object.relocate();
     }
 

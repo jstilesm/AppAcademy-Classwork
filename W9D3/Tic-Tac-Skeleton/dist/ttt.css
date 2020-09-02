@@ -1,0 +1,58 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 5px solid green; */
+    list-style: none;
+    max-width: 200px;
+    margin: auto;
+    
+    
+
+}
+
+li {
+    border: 5px dashed rgb(245, 48, 245);
+    width: 50px;
+    height: 50px;
+    background-color: black
+    
+}
+
+li.x{
+    background-color: blue;
+    
+}
+li.o{
+    background-color: red;
+    
+}
+
+li.x, li.o {
+    color: white;
+    text-align: center;
+    /* vertical-align: bottom; */
+    text-transform: capitalize;
+    text-shadow: 2px 2px black;
+    font-size: 40px;
+    -webkit-animation: spin 0.25s infinite alternate;
+
+
+}
+
+.winner{
+    -webkit-animation: spin 0.5s infinite both;
+
+}
+
+.draw {
+    -webkit-animation: spin 0.5s infinite alternate-reverse;
+}
+
+li:hover {
+    background-color: yellow;
+}
+
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}   
+}

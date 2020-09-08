@@ -1,0 +1,53 @@
+.clock p{
+    font-size: 20px;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    justify-content: center;
+    margin: -10px;
+    /* text-align: center; */
+    
+    /* color: white; */
+}
+.header {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    background-position-y: 40%;
+    /* text-align: center; */
+
+}
+.clock {
+    background-image: url(https://lh3.googleusercontent.com/proxy/WvzN2A_pye5u38GNst3sDS4pDMxTdHZ7VjvBXHqaJ5WO3OrTSbhGBWpdOcf04JUSNFeZQqmtrAiO9-5kezrxPq2JNOflbMk);
+    background-color: black;
+    /* color: white; */
+    /* width: 700px;
+    height: 300px; */
+    padding: 15px;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 40%;
+    margin: 0 30px 20px 20px;
+    padding: 10px;
+}
+
+.tabs {
+    border-radius: 10px;
+    display: flex;
+    text-align: center;  
+    position: relative;  
+}
+
+.content {
+  display: flex;
+  /* text-align: center; */
+  margin: 0px 10px 10px 10px;
+  padding:  10px;
+  justify-content: space-around;
+  position: absolute;
+}
+
+.tabs button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
